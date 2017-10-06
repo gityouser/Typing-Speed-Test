@@ -1,0 +1,47 @@
+<html>
+<body>
+  <p id="timer">00:000</p>
+  <button id="start">start</button>
+<script>
+  let startTime;
+  let completed = false;
+  let theTimer = document.querySelector('#timer');
+
+  function leadingZero(num) {
+    return num < 10 ? '0' + num : num;
+  }
+
+  function timerLoop() {
+    let currentTime = Date.now();
+    if(!startTime) {
+      startTime = currentTime;
+    }
+
+    let timeElapsed = currentTime - startTime;
+
+    if(timeElapsed >= 3000) {
+      completed = true;
+    }
+
+    const minutesElapsed = Math.floor(timeElapsed/60000)
+    const secondsElapsed = Math.floor(timeElapsed / 1000) - (minutesElapsed * 60);
+    const miliElapsed = timeElapsed - secondsElapsed * 1000;//Why is this not equal to zero?
+
+
+    const counter = leadingZero(minutesElapsed) + ":" + leadingZero(secondsElapsed) + ' : ' + miliElapsed;
+    theTimer.innerText = counter;
+
+    if(!completed) {
+      window.requestAnimationFrame(timerLoop);
+    } else { // Why do we need the 'else'?
+      completed = false;
+      startTime = null;
+    }
+  } // end of timerLoop()
+
+  document.querySelector('#start').addEventListener('click',function() {
+    window.requestAnimationFrame(timerLoop);
+  });
+</script>
+<body>
+</html>

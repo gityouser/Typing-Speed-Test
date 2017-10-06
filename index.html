@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <title> Typing Speed Test </title>
+  <link rel = "stylesheet" href = "style.css">
+  <!-- <script src = "script.js"></script> -->
+
+</head>
+
+<body>
+
+<div class="grid">
+
+<!-- The title -->
+
+
+<header class = "masthead border-round-edge">
+  <h1> Test your typing speed</h1>
+  <!-- The timer -->
+    <div class = "timer">00:00:00</div>
+</header>
+
+<!-- The game instructions paragraph. -->
+<div class = "intro border-round-edge">
+    <p> Your goal here is to replicate, EXACTLY, the text provided in the box below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
+</div>
+
+<!-- The text that needs to be typed by the player. -->
+  <div id = "origin-text" class=" border-round-edge">
+    <p>The text to replicate.</p>
+
+  </div>
+
+
+<!-- The field where you enter the text. -->
+
+<textarea id="test-area" class="border-round-edge" name="textarea" rows="8" placeholder = "The clock starts when you start typing.">
+</textarea>
+
+
+  <div class = "error-count border-round-edge">
+      <p>No typo</p>
+  </div>
+
+
+
+<!-- The reset button -->
+  <button id = "reset" class="border-round-edge">Start over
+  </button>
+
+</div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

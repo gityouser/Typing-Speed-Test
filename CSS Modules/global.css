@@ -1,0 +1,32 @@
+h1, p, textarea, .timer {
+  font-weight: bold;
+
+}
+
+h1, p {
+  text-align: center;
+}
+
+body {
+  background-color: lightSlateGrey;
+}
+
+.display-grid {
+  display: grid;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+}
+
+@media(min-width: 480px) {
+  .grid {
+    height: 50vh;
+    box-sizing: border-box;
+    grid-template: repeat(2, 1fr)/ repeat(7, 1fr) ;
+    grid-gap: .1rem;
+    display: grid;
+  }
+
+}
